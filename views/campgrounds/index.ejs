@@ -1,0 +1,24 @@
+<%- layout('layouts/boilerplate') %>
+
+<h1>INDEX</h1>
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+    <% for (camp of camps.reverse()) { %>
+    <div class="col">
+        <div class="card" >
+            <img class="card-img-top" src="<%= camp.image %>" alt="">
+            <div class="card-body">
+                <h3><%= camp.title %></h3>
+                <p><%= camp.description %></p>
+                <div class="btn-group">
+                    <a class="btn btn-primary" href="/campgrounds/<%= camp._id %>">Details</a>
+                    <a class="btn btn-secondary" href="/campgrounds/<%= camp._id %>/edit">Edit</a>
+                    <button class="btn btn-danger" form="frm-delete" type="submit">Delete</button>
+                </div>
+                <form id="frm-delete" action="/campgrounds/<%= camp.id %>?_method=DELETE" method="POST"></form>
+            </div>
+        </div>
+    </div>
+    <% } %> 
+</div>

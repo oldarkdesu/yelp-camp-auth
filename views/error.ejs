@@ -1,0 +1,9 @@
+<%- layout('layouts/boilerplate') %>
+
+<div class="alert alert-danger mt-3" role="alert">
+    <h1 class="alert-heading"><%= status %> <%= message %> <span class="text-end d-inline">:(</span></h1>
+    <p> <b>Stack trace: </b></p>
+    <p>
+        <pre><%= stack %></pre>
+    </p>
+</div>
